@@ -3,10 +3,9 @@ import React, { Component } from 'react'
 const Movies = () => {
   return (
     <div>
-      Movies Search Results 
+      <h1>Search Results</h1> 
     </div>
   )
 }
-
 
 export default Movies

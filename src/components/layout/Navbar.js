@@ -11,7 +11,7 @@ const Navbar = ({ icon, title }) => {
         <ul className="list-unstyled d-flex align-items-center my-3">
           <li><Link className="text-white" to='/'>Home</Link></li>
           <li><Link className="text-white mx-4" to='/About'>About</Link></li>
-          <li><Link className="btn btn-success" to="">Nominations</Link></li>
+          <li><Link className="btn btn-success" to="/Nominations">Nominations</Link></li>
         </ul>         
       </nav>     
     </header>
