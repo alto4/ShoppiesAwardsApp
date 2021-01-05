@@ -7,23 +7,27 @@ import Nominations from './components/Nominations';
 import About from './components/pages/About';
 import './App.css';
 
+import GlobalProvider from './context/GlobalState';
+
 function App() {
   return (
-    <Router>
-      <Navbar icon="fa fa-film" title="The Shoppies" />
-      <Switch>
-        <Route exact path="/">
-          <Searchbar />
-          <Movies />  
-        </Route>
-        <Route exact path="/Nominations">
-          <Nominations />
-        </Route>
-        <Route exact path="/About">
-          <About />
-        </Route>  
-      </Switch> 
-    </Router>
+    <GlobalProvider>
+      <Router>
+        <Navbar icon="fa fa-film" title="The Shoppies" />
+        <Switch>
+          <Route exact path="/">
+            <Searchbar />
+            <Movies />  
+          </Route>
+          <Route exact path="/Nominations">
+            <Nominations />
+          </Route>
+          <Route exact path="/About">
+            <About />
+          </Route>  
+        </Switch> 
+      </Router>
+    </GlobalProvider>
   );
 }
 
