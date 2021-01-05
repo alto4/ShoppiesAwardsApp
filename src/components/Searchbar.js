@@ -47,7 +47,7 @@ const Searchbar = () => {
         </div>
       </form>
 
-      {results.length > 0 && (
+      {results && (
         <ul className="results">
           {results.map((movie) => (
             <div key={movie.imdbID}>
