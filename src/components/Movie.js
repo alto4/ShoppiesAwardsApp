@@ -11,7 +11,7 @@ const Movie = ({ match }) => {
           <Link to='/' className="btn btn-dark my-4">Back to Search</Link>
           
           <div className="row">
-            <img className="col-4" src={Poster} />
+            <img src={Poster} />
             <div className="details col-md-8">
               <h2>{Title}</h2>
               <hr className="bg-dark" />
@@ -23,8 +23,7 @@ const Movie = ({ match }) => {
               </ul>
               <hr className="bg-dark" />
               <p className="h4">Summary: {Plot}</p>
-            </div>
-            
+            </div>          
           </div>  
         </div>
       </Fragment>

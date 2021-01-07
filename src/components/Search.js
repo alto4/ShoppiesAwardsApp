@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, Fragment } from 'react';
 import axios from 'axios';
 import MovieItem from './MovieItem';
 
-const Searchbar = () => {
+const Search = () => {
 
   // State management
   const [text, setText] = useState('');
@@ -19,27 +19,24 @@ const Searchbar = () => {
 
   // onChange function
   const onChange = (e) => {
-    e.preventDefault();
-
     setText(e.target.value);
   };
 
-  // onSubmit function 
+  // onSubmit function
   const onSubmit = (e) => {
     e.preventDefault();
 
     // Validate search input in case blank search is attempted
     if(text === '') {
-      alert("Please enter a movie title.");
+      alert('Need text input.');
     } else {
       searchMovies(text);
-      setText('');
     }    
-  };
-
+  }
 
   return (
     <div className="container">
+      <h1 className="text-center my-5">Search</h1>
       <form onSubmit={onSubmit} className="mt-5">
         <div className="form-group row w-50 mx-auto">
           <input type="text" value={text} onChange={onChange} name="text" className="form-control w-75" placeholder="Search movies..." />
@@ -48,16 +45,17 @@ const Searchbar = () => {
       </form>
 
       {results && (
-        <ul className="results">
+                
+          <div className="results-container">
           {results.map((movie) => (
             <div key={movie.imdbID}>
               <MovieItem movie={movie} />
             </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   )
 }
 
-export default Searchbar
+export default Search

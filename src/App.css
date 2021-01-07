@@ -7,3 +7,15 @@
 body {
   font-family: "Inter", sans-serif;
 }
+
+.results-container,
+.nominations-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: auto;
+}
+
+.card img {
+  width: 260px;
+  height: 370px;
+}

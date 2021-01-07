@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
-import Searchbar from './components/Searchbar';
-import Movies from './components/Movies';
+import Search from './components/Search';
 import Nominations from './components/Nominations';
 import About from './components/pages/About';
 import './App.css';
@@ -16,8 +15,7 @@ function App() {
         <Navbar icon="fa fa-film" title="The Shoppies" />
         <Switch>
           <Route exact path="/">
-            <Searchbar />
-            <Movies />  
+            <Search /> 
           </Route>
           <Route exact path="/Nominations">
             <Nominations />

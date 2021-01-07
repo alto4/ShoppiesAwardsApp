@@ -20,12 +20,25 @@ export const GlobalProvider = (props) => {
   });
 
   // Actions 
+  // Add to nomination list
   const addMovieToNominations = (movie) => {
     dispatch({ type: "ADD_MOVIE_TO_NOMINATIONS", payload: movie });
   };
 
+  // Remove from nomination list
+  const removeMovieFromNominations = (imdbID) => {
+    dispatch({ type: "REMOVE_MOVIE_FROM_NOMINATIONS", payload: imdbID});
+  };
+
   return (
-    <GlobalContext.Provider value={{ nominations: state.nominations, results: state.results, addMovieToNominations }}>
+    <GlobalContext.Provider 
+      value={{ 
+        nominations: state.nominations, 
+        results: state.results, 
+        addMovieToNominations,
+        removeMovieFromNominations
+      }}
+    >
       {props.children}
     </GlobalContext.Provider>
   )
