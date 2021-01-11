@@ -2,12 +2,30 @@
 
 * {
   margin: 0;
-  body: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
   font-family: "Shopify Sans Web Medium", sans-serif;
+  background-color: #fbf7ed;
+}
+
+.navbar,
+.navbar a {
+  color: #42474c;
+}
+
+.navbar a:hover {
+  text-decoration: none;
+  color: #222;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0.75rem 1.5rem;
 }
 
 .results-container,
@@ -20,4 +38,17 @@ body {
 .card img {
   width: 260px;
   height: 370px;
+}
+
+.btn-success {
+  background: #004c3f;
+  color: #fff !important;
+  border: none;
+  padding: 0.6rem 1rem;
+}
+
+.btn-success:hover[disabled="false"] {
+  background-color: #004c3f;
+  transform: scale(1.02);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

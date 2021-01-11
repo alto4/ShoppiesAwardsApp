@@ -7,12 +7,12 @@ const Navbar = ({ icon, title }) => {
   
   return (
     <header>
-      <nav className="navbar bg-dark text-white px-5 justify-content-between">
+      <nav className="navbar px-5 justify-content-between">
         <h4>
-        <Link className="text-white" to='/'><i className={icon}></i> {title}</Link>
+        <Link to='/'><i className={icon}></i> {title}</Link>
         </h4>
-        <ul className="list-unstyled d-flex align-items-center my-3">
-          <li><Link className="text-white" to='/'>Home</Link></li>
+        <ul className="nav-links">
+          <li><Link to='/'>Home</Link></li>
           <li><Link className="btn btn-success mx-4" to="/Nominations"><span className="btn btn-danger btn-sm rounded-circle">{nominations.length}</span> Nominations</Link></li>
         </ul>         
       </nav>     
