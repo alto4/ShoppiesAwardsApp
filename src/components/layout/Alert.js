@@ -7,7 +7,7 @@ const Alert = () => {
   const { alert } = alertContext;
 
   return (
-    alert.message !== '' && (
+     (alert && alert.message !== '') && (
       <div className={`alert alert-${alert.type} w-50 mx-auto mt-3`}>
         <i className="fa fa-info-circle"></i> { alert.message }
       </div>

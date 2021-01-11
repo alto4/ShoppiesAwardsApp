@@ -15,7 +15,7 @@ export const MovieItem = ({ movie }) => {
   const nominationsFull = nominations.length >= 5 ? true : false;
   
   return (
-    <div className="card text-center d-flex justify-content-center bg-dark text-white m-2 pb-4">
+    <div className="card">
       <img src={Poster} alt={Title} className="img-fluid mx-auto p-3 poster" />
       <h4 className="mx-3">{Title}<span className="h6"> ({Year})</span></h4>
 

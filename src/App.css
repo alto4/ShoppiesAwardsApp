@@ -12,6 +12,12 @@ body {
 }
 
 .navbar,
+.container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.navbar,
 .navbar a {
   color: #42474c;
 }
@@ -28,16 +34,48 @@ body {
   margin: 0.75rem 1.5rem;
 }
 
+.bg-green {
+  background: #004c3f;
+  min-height: 400px;
+}
+
 .results-container,
 .nominations-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: auto;
+  grid-gap: 1.3rem;
+  width: 75%;
+}
+
+/* Utility Classes */
+
+h1 {
+  font-size: 3rem;
+  margin: 3rem 0;
+}
+
+h2 {
+  color: #fff;
+  font-size: 2rem;
+  padding: 3rem;
+}
+
+.card {
+  height: 560px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: #fbf7ed;
 }
 
 .card img {
+  position: static;
+  top: 15px;
+  left: 15px;
   width: 260px;
-  height: 370px;
+  height: 400px;
 }
 
 .btn-success {

@@ -7,7 +7,7 @@ const Navbar = ({ icon, title }) => {
   
   return (
     <header>
-      <nav className="navbar px-5 justify-content-between">
+      <nav className="navbar justify-content-between">
         <h4>
         <Link to='/'><i className={icon}></i> {title}</Link>
         </h4>

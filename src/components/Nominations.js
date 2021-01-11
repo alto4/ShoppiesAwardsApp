@@ -7,8 +7,8 @@ const Nominations = () => {
   const { nominations } = useContext(GlobalContext);
   
   return (
-    <div className="container">
-      <h1 className="text-center py-4">Nominations</h1>
+    <div className="bg-green">
+      <h2 className="text-center">Nominations</h2>
       {nominations.length > 0 ? (
         <div className="nominations-container">
           {nominations.map((movie) => (
