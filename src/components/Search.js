@@ -1,13 +1,15 @@
-import React, { useState, useContext, Fragment } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import MovieItem from './MovieItem';
-
+import { AlertContext } from '../context/alert/AlertState';
 const Search = () => {
 
   // State management
   const [text, setText] = useState('');
   const [results, setResults] = useState([]);
 
+  const { setAlert } = useContext(AlertContext);
+  
   // searchMovies function - accepts search text, then requests corresponding results from OMDB
   const searchMovies = async text => {
     // Make get request
@@ -28,7 +30,8 @@ const Search = () => {
 
     // Validate search input in case blank search is attempted
     if(text === '') {
-      alert('Need text input.');
+      setAlert('Please enter something', 'danger');
+      
     } else {
       searchMovies(text);
     }    

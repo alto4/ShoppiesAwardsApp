@@ -1,5 +1,6 @@
-import React, { createContext, useReducer, useEffect } from 'react';
+import React, { createContext, useReducer, useContext, useEffect } from 'react';
 import AppReducer from './AppReducer';
+import { AlertContext } from '../context/alert/AlertState';
 
 // Initial state 
 const initialState = {
@@ -20,9 +21,16 @@ export const GlobalProvider = (props) => {
   });
 
   // Actions 
+  const { setAlert } = useContext(AlertContext);
+  const { nominations } = useContext(GlobalContext);
+  
   // Add to nomination list
   const addMovieToNominations = (movie) => {
     dispatch({ type: "ADD_MOVIE_TO_NOMINATIONS", payload: movie });
+
+    if(nominations.length > 3) { 
+      alert("This will be the setAlert call."); 
+    };
   };
 
   // Remove from nomination list

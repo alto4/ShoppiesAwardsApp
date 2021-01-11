@@ -3,28 +3,30 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Search from './components/Search';
 import Nominations from './components/Nominations';
-import About from './components/pages/About';
+import Alert from './components/layout/Alert';
 import './App.css';
 
 import GlobalProvider from './context/GlobalState';
+import AlertProvider from './context/alert/AlertState';
 
 function App() {
+  
   return (
     <GlobalProvider>
-      <Router>
-        <Navbar icon="fa fa-film" title="The Shoppies" />
-        <Switch>
-          <Route exact path="/">
-            <Search /> 
-          </Route>
-          <Route exact path="/Nominations">
-            <Nominations />
-          </Route>
-          <Route exact path="/About">
-            <About />
-          </Route>  
-        </Switch> 
-      </Router>
+      <AlertProvider>
+        <Router>
+          <Navbar icon="fa fa-film" title="The Shoppies" />
+          <Switch>
+            <Route exact path="/">
+              <Alert />
+              <Search /> 
+            </Route>
+            <Route exact path="/Nominations">
+              <Nominations />
+            </Route> 
+          </Switch> 
+        </Router>
+      </AlertProvider>
     </GlobalProvider>
   );
 }

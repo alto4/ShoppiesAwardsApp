@@ -21,8 +21,6 @@ const Nominations = () => {
         <h4 className="text-danger">You haven't nominated any movies yet.</h4>
       )}
     </div>
-
-    
   )
 }
 
