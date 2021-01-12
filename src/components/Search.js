@@ -56,20 +56,19 @@ const Search = () => {
         <div className="header-container-right">
           <h4>Current Nominations</h4>
           {nominations.length > 0 ? (
-          <ul className="nominations-list">
-            {nominations.map((movie) => (
-                <NominationListItem movie={movie} />
-            ))}
-          </ul>
+            <ul className="nominations-list">
+              {nominations.map((movie) => (
+                  <NominationListItem movie={movie} />
+              ))}
+            </ul>
             ) : (
-              <h4 className="text-danger">You haven't nominated any movies yet.</h4>
+              null
             )}
         </div> 
       </div>
-      {results && (                
-        <div className="bg-green">
-
-          <h2 className="text-center">Results</h2>
+      <div className="bg-green">
+        <h2 className="text-center">Results</h2>        
+        {results && results.length > 0 ? (
           <div className="results-container">
             {results.map((movie) => (
               <div key={movie.imdbID}>
@@ -77,8 +76,10 @@ const Search = () => {
               </div>
             ))}
           </div>
-        </div>
-      )}      
+        ) : (
+          null
+        )}
+      </div>           
     </Fragment>
   )
 }

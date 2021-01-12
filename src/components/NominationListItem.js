@@ -16,23 +16,22 @@ export const NominationListItem = ({ movie }) => {
   
   return (
     <li className="nomination-list-item">
-      <img src={Poster} alt={Title} className="poster-sm" />
-      <div className="d-block">
-        <h5>{Title}</h5>
+      {/* <img src={Poster} alt={Title} className="poster-sm" /> */}
+
+        <h6>{Title}</h6>
 
         <div className="controls-container">
-          <Link to={`/movie/${imdbID}`} className="button btn btn-success"><i className="fa fa-plus"></i></Link>
+          <Link to={`/movie/${imdbID}`} className="button btn btn-success btn-small"><i className="fa fa-plus"></i></Link>
           {
             renderRemoveButton ? (
-              <button onClick={() => removeMovieFromNominations(movie.imdbID) } className="btn btn-danger my-3 px-3 mx-2"><i className="fa fa-trash"></i></button>    
+              <button onClick={() => removeMovieFromNominations(movie.imdbID) } className="btn btn-danger btn-small my-3 px-3 mx-2"><i className="fa fa-trash"></i></button>    
             ) : 
             (
-              <button onClick={() => addMovieToNominations(movie) } disabled={nominationsFull} className="btn btn-success my-3 px-3 mx-2">Nominate</button>
+              <button onClick={() => addMovieToNominations(movie) } disabled={nominationsFull} className="btn btn-success btn-small my-3 px-3 mx-2">Nominate</button>
             )
           }
           
         </div>
-      </div>
     </li>
   )  
 }
