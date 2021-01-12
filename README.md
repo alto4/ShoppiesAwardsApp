@@ -1,6 +1,8 @@
 # TheShoppies
 A movie awards contest application that allows users to search movies and nominate 5 of their favourites. 
 
+Demo Link: https://shoppiesmovieawards2021.netlify.app/
+
 These are the functional requirements for the MVP:
   1. Search OMDB and display the results (movies only)
   2. Add a movie from the search results to our nomination list
