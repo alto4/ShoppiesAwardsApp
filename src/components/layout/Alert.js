@@ -8,7 +8,7 @@ const Alert = () => {
 
   return (
      (alert && alert.message !== '') && (
-      <div className={`alert alert-${alert.type} w-50 mx-auto mt-3`}>
+      <div className={`alert alert-${alert.type} mx-auto mt-0`}>
         <i className="fa fa-info-circle"></i> { alert.message }
       </div>
     )

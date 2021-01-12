@@ -45,6 +45,9 @@ body {
   height: 440px;
 }
 
+.alert {
+  width: 100%;
+}
 .results-container,
 .nominations-container {
   display: grid;
@@ -52,6 +55,7 @@ body {
   margin: auto;
   grid-gap: 1.3rem;
   width: 75%;
+  padding-bottom: 80px;
 }
 
 /* Nominations Summary */

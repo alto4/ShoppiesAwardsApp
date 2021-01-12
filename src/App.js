@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Search from './components/Search';
 import Nominations from './components/Nominations';
-import Alert from './components/layout/Alert';
 import './App.css';
 
 import GlobalProvider from './context/GlobalState';
@@ -18,7 +17,6 @@ function App() {
           <Navbar icon="fa fa-film" title="The Shoppies" />
           <Switch>
             <Route exact path="/">
-              <Alert />
               <Search /> 
             </Route>
             <Route exact path="/Nominations">

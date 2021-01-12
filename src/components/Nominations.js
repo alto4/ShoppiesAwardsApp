@@ -18,7 +18,7 @@ const Nominations = () => {
           ))}
         </div>
       ) : (
-        <h4 className="text-danger">You haven't nominated any movies yet.</h4>
+        <h4 className="text-danger text-center">You haven't nominated any movies yet.</h4>
       )}
     </div>
   )

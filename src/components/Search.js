@@ -1,9 +1,11 @@
 import React, { useState, useContext, Fragment } from 'react';
 import axios from 'axios';
 import MovieItem from './MovieItem';
+import Alert from './layout/Alert';
 import NominationListItem from './NominationListItem';
 import { GlobalContext } from '../context/GlobalState';
 import { AlertContext } from '../context/alert/AlertState';
+
 const Search = () => {
 
   // State management
@@ -50,6 +52,7 @@ const Search = () => {
             <div className="form-group row w-75">
               <input type="text" value={text} onChange={onChange} name="text" className="form-control w-75" placeholder="Search movies..." />
               <input type="submit" value="Search" className="btn btn-dark w-25 mb-5" />
+              <Alert />
             </div>
           </form>
         </div>
