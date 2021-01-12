@@ -27,10 +27,6 @@ export const GlobalProvider = (props) => {
   // Add to nomination list
   const addMovieToNominations = (movie) => {
     dispatch({ type: "ADD_MOVIE_TO_NOMINATIONS", payload: movie });
-
-    if(nominations.length > 3) { 
-      alert("This will be the setAlert call."); 
-    };
   };
 
   // Remove from nomination list

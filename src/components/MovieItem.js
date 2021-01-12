@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
 
 export const MovieItem = ({ movie }) => {
-  const { Title, Poster, Year, Director, imdbID } = movie;
+  const { Title, Poster, Year, imdbID } = movie;
 
   const { addMovieToNominations, removeMovieFromNominations, nominations } = useContext(GlobalContext);
 

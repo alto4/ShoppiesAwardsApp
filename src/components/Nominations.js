@@ -8,7 +8,7 @@ const Nominations = () => {
   
   return (
     <div className="bg-green">
-      <h2 className="text-center">Nominations</h2>
+      <h2 className="text-center">Nominations</h2>      
       {nominations.length > 0 ? (
         <div className="nominations-container">
           {nominations.map((movie) => (

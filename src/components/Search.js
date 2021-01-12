@@ -23,6 +23,14 @@ const Search = () => {
     const res = await axios.get(`https://www.omdbapi.com/?s=${text}&apikey=${apiKey}&type=movie`);
  
     setResults(res.data.Search);
+
+    // Scroll down to display results in any are returned from the search
+    if(results) {
+      window.scrollBy({
+        top: (500 - window.scrollY),
+        behavior: 'smooth'
+      });
+    }
   }
 
   // onChange function
@@ -41,6 +49,10 @@ const Search = () => {
     } else {
       searchMovies(text);
     }    
+
+    if (!results) {
+      setAlert('No search results. Please try again', 'danger')
+    }
   }
 
   return (
@@ -58,6 +70,13 @@ const Search = () => {
         </div>
         <div className="header-container-right">
           <h4>Current Nominations</h4>
+          {nominations.length >= 5 ? (
+            
+          <div class="alert alert-success">Nominations Fulfilled!</div>
+          
+          ) : (
+            ''
+          )}
           {nominations.length > 0 ? (
             <ul className="nominations-list">
               {nominations.map((movie) => (
