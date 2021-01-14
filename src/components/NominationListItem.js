@@ -13,7 +13,7 @@ export const NominationListItem = ({ movie }) => {
         <h6>{Title}</h6>
 
         <div className="controls-container">
-          <Link to={`/movie/${imdbID}`} className="button btn btn-success btn-small"><i className="fa fa-plus"></i></Link>
+        <a href={`https://www.imdb.com/title/${imdbID}`} target="_blank" className="button btn btn-success btn-small"><i className="fa fa-plus"></i></a>
           {
               <button onClick={() => removeMovieFromNominations(movie.imdbID) } className="btn btn-danger btn-small my-3 px-3 mx-2"><i className="fa fa-trash"></i></button>    
           }
