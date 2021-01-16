@@ -19,13 +19,13 @@ export const MovieItem = ({ movie }) => {
       <h4 className="mx-3">{Title}<span className="h6"> ({Year})</span></h4>
 
       <div>
-        <a href={`https://www.imdb.com/title/${imdbID}`} target="_blank" className="button btn btn-success my-3 mx-2 px-4">Details</a>
+        <a href={`https://www.imdb.com/title/${imdbID}`} target="_blank" className="button btn btn-success">Details</a>
         {
           renderRemoveButton ? (
-            <button onClick={() => removeMovieFromNominations(movie.imdbID) } className="btn btn-danger my-3 px-3 mx-2">Withdraw</button>    
+            <button onClick={() => removeMovieFromNominations(movie.imdbID) } className="btn btn-danger">Withdraw</button>    
           ) : 
           (
-            <button onClick={() => addMovieToNominations(movie) } disabled={nominationsFull} className="btn btn-success my-3 px-3 mx-2">Nominate</button>
+            <button onClick={() => addMovieToNominations(movie) } disabled={nominationsFull} className="btn btn-success">Nominate</button>
           )
         }
         

@@ -17,6 +17,10 @@ body {
   margin: auto;
 }
 
+.container {
+  padding: 0 1.5rem;
+}
+
 .navbar,
 .navbar a {
   color: #42474c;
@@ -31,7 +35,7 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
-  margin: 0.75rem 1.5rem;
+  margin: 0.75rem 0rem;
 }
 
 .bg-green {
@@ -102,7 +106,8 @@ h2 {
 }
 
 .card {
-  height: 560px;
+  height: 580px;
+  overflow: hidden;
   position: relative;
   text-align: center;
   display: flex;
@@ -148,11 +153,19 @@ h2 {
   justify-content: center;
 }
 
-.btn-success {
-  background: #004c3f;
+.btn {
   color: #fff !important;
   border: none;
+  margin: 5px;
   padding: 0.6rem 1rem;
+}
+
+.btn-success {
+  background: #004c3f;
+}
+
+.btn-nominate {
+  background: #004c3f;
 }
 
 .btn-small {
@@ -197,4 +210,106 @@ h2 {
 .footer-icons ul li a:hover {
   color: #aaa;
   transition: ease-in;
+}
+
+/* Media Queries */
+/* Tablet */
+@media(max-width: 1370px) {
+  .navbar,
+  .header-container-left,
+  .header-container-right {
+    padding: 0 1.5rem;
+  }
+  .results-container,
+  .nominations-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width: 1024px) {
+  .header-container {
+    grid-template-columns: 1fr;
+  }
+
+  .header-container .header-container-left,
+  .header-container .header-container-right {
+    margin: auto;
+  }
+
+  .header-container-left h1 {
+    text-align: center;
+  }
+
+  .results-container,
+  .nominations-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header-container-left input {
+    width: 100%;
+  }
+}
+
+/* Small tablet */
+@media(max-width: 1150px) {
+  .footer,
+  .footer-icons {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+
+  .footer-icons {
+    position: relative;
+    right: auto;
+    width: 100%;
+  }
+
+  .footer-icons ul {
+    justify-content: center;
+  }
+}
+
+
+/* Mobile */
+@media(max-width: 600px) {
+  .header-container-left h1 {
+    text-align: center;
+    font-size: 2.2rem;
+  }
+  
+  .nomination-list-item {
+    max-width: 320px
+  }
+  .navbar{
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .nav-links li{
+    margin: 1rem auto;
+  }
+
+  .btn {
+    margin: 8px 0;
+  }
+
+  .btn-success,
+  .btn-danger {
+    width: 100%;
+  }
+
+  .results-container,
+  .nominations-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .card {
+    max-width: 380px;
+    padding: 1rem;
+    margin: auto;
+  }
+
 }

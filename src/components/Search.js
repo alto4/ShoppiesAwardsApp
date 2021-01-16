@@ -45,10 +45,8 @@ const Search = () => {
         <div className="header-container-left">
           <h1>Nominate Your Top <br/>5 Picks</h1>
             <div className="mt-5">
-            <div className="form-group row w-75">
-              <input type="text" value={text} onChange={onChange} name="text" className="form-control w-100" placeholder="Search movies..." />
+              <input type="text" value={text} onChange={onChange} name="text" className="form-control w-100" placeholder="Search movies..." />           
             </div>
-          </div>
         </div>
         <div className="header-container-right">
           <h4>Current Nominations</h4>

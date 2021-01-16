@@ -7,13 +7,13 @@ const Navbar = ({ icon, title }) => {
 
   return (
     <header>
-      <nav className="navbar justify-content-between">
+      <nav className="navbar">
         <h4>
         <Link to='/'><i className={icon}></i> {title}</Link>
         </h4>
         <ul className="nav-links">
           <li><Link to='/'>Home</Link></li>
-          <li><Link className="btn btn-success mx-4" to="/Nominations"><span className="btn btn-danger btn-sm rounded-circle">{nominations.length}</span> Nominations</Link></li>
+          <li><Link className="btn btn-success mx-4" to="/Nominations"><span className="btn-danger btn-sm rounded-circle">{nominations.length}</span>  Nominations</Link></li>
         </ul>         
       </nav>     
     </header>
