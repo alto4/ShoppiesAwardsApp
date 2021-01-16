@@ -1,10 +1,8 @@
-import React, { useState, useContext, Fragment } from 'react';
+import React, { useState, useContext, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import MovieItem from './MovieItem';
-import Alert from './layout/Alert';
 import NominationListItem from './NominationListItem';
 import { GlobalContext } from '../context/GlobalState';
-import { AlertContext } from '../context/alert/AlertState';
 
 const Search = () => {
 
@@ -14,7 +12,6 @@ const Search = () => {
 
   
   const { nominations } = useContext(GlobalContext);
-  const { setAlert } = useContext(AlertContext);
   
   // searchMovies function - accepts search text, then requests corresponding results from OMDB
   const searchMovies = async text => {
@@ -27,46 +24,31 @@ const Search = () => {
     // Scroll down to display results in any are returned from the search
     if(results) {
       window.scrollBy({
-        top: (500 - window.scrollY),
+        top: (580 - window.scrollY),
         behavior: 'smooth'
       });
+      
     }
   }
 
   // onChange function
-  const onChange = (e) => {
+  const onChange = (e) => {   
+
     setText(e.target.value);
+    searchMovies(e.target.value);
   };
 
-  // onSubmit function
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    // Validate search input in case blank search is attempted
-    if(text === '') {
-      setAlert('Please enter something', 'danger');
-      
-    } else {
-      searchMovies(text);
-    }    
-
-    if (!results) {
-      setAlert('No search results. Please try again', 'danger')
-    }
-  }
 
   return (
     <Fragment>
       <div className="container header-container">
         <div className="header-container-left">
           <h1>Nominate Your Top <br/>5 Picks</h1>
-            <form onSubmit={onSubmit} className="mt-5">
+            <div className="mt-5">
             <div className="form-group row w-75">
-              <input type="text" value={text} onChange={onChange} name="text" className="form-control w-75" placeholder="Search movies..." />
-              <input type="submit" value="Search" className="btn btn-dark w-25 mb-5" />
-              <Alert />
+              <input type="text" value={text} onChange={onChange} name="text" className="form-control w-100" placeholder="Search movies..." />
             </div>
-          </form>
+          </div>
         </div>
         <div className="header-container-right">
           <h4>Current Nominations</h4>

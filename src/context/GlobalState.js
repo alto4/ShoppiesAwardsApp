@@ -1,6 +1,5 @@
 import React, { createContext, useReducer, useContext, useEffect } from 'react';
 import AppReducer from './AppReducer';
-import { AlertContext } from '../context/alert/AlertState';
 
 // Initial state 
 const initialState = {
@@ -21,17 +20,24 @@ export const GlobalProvider = (props) => {
   });
 
   // Actions 
-  const { setAlert } = useContext(AlertContext);
   const { nominations } = useContext(GlobalContext);
   
   // Add to nomination list
   const addMovieToNominations = (movie) => {
     dispatch({ type: "ADD_MOVIE_TO_NOMINATIONS", payload: movie });
+    window.scrollBy({
+      top: (0 - window.scrollY),
+      behavior: 'smooth'
+    });
   };
 
   // Remove from nomination list
   const removeMovieFromNominations = (imdbID) => {
     dispatch({ type: "REMOVE_MOVIE_FROM_NOMINATIONS", payload: imdbID});
+    window.scrollBy({
+      top: (0 - window.scrollY),
+      behavior: 'smooth'
+    });
   };
 
   return (

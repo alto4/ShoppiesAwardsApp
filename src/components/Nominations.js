@@ -7,7 +7,7 @@ const Nominations = () => {
   const { nominations } = useContext(GlobalContext);
   
   return (
-    <div className="bg-green">
+    <div className="bg-green nominations">
       <h2 className="text-center">Nominations</h2>      
       {nominations.length > 0 ? (
         <div className="nominations-container">

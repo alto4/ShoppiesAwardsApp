@@ -1,14 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../../context/GlobalState';
-import { AlertContext } from '../../context/alert/AlertState';
 
 const Navbar = ({ icon, title }) => {
   const { nominations } = useContext(GlobalContext);
-
-  if(nominations.length === 5) {
-    //setAlert('You have added all 5 nominations.', 'success');
-  }
 
   return (
     <header>

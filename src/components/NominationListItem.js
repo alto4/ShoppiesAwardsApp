@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
 
 export const NominationListItem = ({ movie }) => {
@@ -13,7 +12,9 @@ export const NominationListItem = ({ movie }) => {
         <h6>{Title}</h6>
 
         <div className="controls-container">
-        <a href={`https://www.imdb.com/title/${imdbID}`} target="_blank" className="button btn btn-success btn-small"><i className="fa fa-plus"></i></a>
+        <a href={`https://www.imdb.com/title/${imdbID}`} target="_blank" className="button btn btn-success btn-small">
+          <i className="fa fa-plus"></i>
+        </a>
           {
               <button onClick={() => removeMovieFromNominations(movie.imdbID) } className="btn btn-danger btn-small my-3 px-3 mx-2"><i className="fa fa-trash"></i></button>    
           }
