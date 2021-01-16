@@ -2,11 +2,12 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 
 export const MovieItem = ({ movie }) => {
-  const { Title, Poster, Year, imdbID,  } = movie;
+  const { Title, Poster, Year, imdbID  } = movie;
 
+  // Get nominations data and state functions from global context
   const { addMovieToNominations, removeMovieFromNominations, nominations } = useContext(GlobalContext);
 
-  // Check for status of movie as already nominated 
+  // Check for status of movie as already nominated
   const nominatedMovie = nominations.find(nomination => nomination.imdbID === movie.imdbID );
   const renderRemoveButton = nominatedMovie ? true : false;
 
@@ -21,6 +22,7 @@ export const MovieItem = ({ movie }) => {
       <div>
         <a href={`https://www.imdb.com/title/${imdbID}`} target="_blank" className="button btn btn-success">Details</a>
         {
+          // If movie is already nominated render the remove button, otherwise render nominate button
           renderRemoveButton ? (
             <button onClick={() => removeMovieFromNominations(movie.imdbID) } className="btn btn-danger">Withdraw</button>    
           ) : 
@@ -28,7 +30,6 @@ export const MovieItem = ({ movie }) => {
             <button onClick={() => addMovieToNominations(movie) } disabled={nominationsFull} className="btn btn-success">Nominate</button>
           )
         }
-        
       </div>
     </div>
   )  

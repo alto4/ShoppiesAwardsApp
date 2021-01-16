@@ -1,7 +1,7 @@
-import React, { createContext, useReducer, useContext, useEffect } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
 import AppReducer from './AppReducer';
 
-// Initial state 
+// Initial state - attempts to get nominations from local storage if any are set, otherwise initializes empty array
 const initialState = {
   nominations: localStorage.getItem('nominations') ? JSON.parse(localStorage.getItem('nominations')) : [],
   results: []
@@ -18,9 +18,6 @@ export const GlobalProvider = (props) => {
   useEffect(() => {
     localStorage.setItem("nominations", JSON.stringify(state.nominations));
   });
-
-  // Actions 
-  const { nominations } = useContext(GlobalContext);
   
   // Add to nomination list
   const addMovieToNominations = (movie) => {

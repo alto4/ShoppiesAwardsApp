@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
-import { GlobalContext } from '../context/GlobalState';
 import MovieItem from './MovieItem';
 
+import { GlobalContext } from '../context/GlobalState';
+
 const Nominations = () => {
-  // Get nominations 
+  // Get nominations from app-level state
   const { nominations } = useContext(GlobalContext);
-  
+
+  // Render all nominated movie items if at least one movie has been nominated
   return (
     <div className="bg-green nominations">
       <h2 className="text-center">Nominations</h2>      
@@ -18,7 +20,7 @@ const Nominations = () => {
           ))}
         </div>
       ) : (
-        <h4 className="text-danger text-center">You haven't nominated any movies yet.</h4>
+        null
       )}
     </div>
   )

@@ -237,6 +237,7 @@ h2 {
   }
 
   .header-container-left h1 {
+    font-size: 2.5rem;
     text-align: center;
   }
 
@@ -247,11 +248,12 @@ h2 {
 
   .header-container-left input {
     width: 100%;
-  }
+    margin-bottom: 1rem;
+  }  
 }
 
 /* Small tablet */
-@media(max-width: 1150px) {
+@media(max-width: 1150px) {  
   .footer,
   .footer-icons {
     display: block;
@@ -274,12 +276,11 @@ h2 {
 /* Mobile */
 @media(max-width: 600px) {
   .header-container-left h1 {
-    text-align: center;
     font-size: 2.2rem;
   }
   
   .nomination-list-item {
-    max-width: 320px
+    max-width: 350px
   }
   .navbar{
     display: block;
