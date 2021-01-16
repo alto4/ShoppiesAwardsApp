@@ -13,7 +13,7 @@ const Navbar = ({ icon, title }) => {
         </h4>
         <ul className="nav-links">
           <li><Link to='/'>Home</Link></li>
-          <li><Link className="btn btn-success mx-4" to="/Nominations"><span className="btn-danger btn-sm rounded-circle">{nominations.length}</span>  Nominations</Link></li>
+          <li><Link className="btn btn-success ml-4" to="/Nominations"><span className="btn-danger btn-sm rounded-circle">{nominations.length}</span>  Nominations</Link></li>
         </ul>         
       </nav>     
     </header>

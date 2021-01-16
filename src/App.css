@@ -162,6 +162,7 @@ h2 {
 
 .btn-success {
   background: #004c3f;
+  
 }
 
 .btn-nominate {
@@ -278,17 +279,19 @@ h2 {
 
 /* Mobile */
 @media(max-width: 600px) {
+  .container 
+
   .header-container-left h1 {
     font-size: 2.2rem;
   }
   
   .nomination-list-item {
-    max-width: 350px
+    max-width: 300px
   }
   .navbar{
     display: block;
     margin: auto;
-    padding: 1rem;
+    padding: 1rem 0;
     text-align: center;
   }
 
