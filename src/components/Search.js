@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, Fragment } from 'react';
+import React, { useState, useContext, Fragment } from 'react';
 import axios from 'axios';
 import MovieItem from './MovieItem';
 import NominationListItem from './NominationListItem';
@@ -62,7 +62,7 @@ const Search = () => {
           {nominations.length > 0 ? (
             <ul className="nominations-list">
               {nominations.map((movie) => (
-                  <NominationListItem movie={movie} />
+                  <NominationListItem movie={movie} key={movie.imdbID} />
               ))}
             </ul>
             ) : (
