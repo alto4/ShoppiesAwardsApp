@@ -4,6 +4,11 @@ A movie awards contest application that allows users to search movies and nomina
 
 Demo Link: https://shoppies-awards-2021.netlify.app/
 
+This application was built using React, React Router, the OMDB API, and Axios, as well as CSS Grid and Flexbox. 
+Persistence of a user's nominations is achieved using LocalStorage.  
+
+**************************************************************************************************
+
 These are the functional requirements for the MVP:
 
 1. Search OMDB and display the results (movies only)
